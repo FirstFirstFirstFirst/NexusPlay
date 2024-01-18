@@ -1,11 +1,12 @@
 import React from 'react'
-import StoreTitle from './ForGuest/StoreTitle'
-const page = () => {
+import StorePagemain from '@/components/StorePage/StorePagemain'
+
+const Page = () => {
   return (
     <div>
-      <StoreTitle />
+      <StorePagemain />
     </div>
   )
 }
 
-export default page
+export default Page
