@@ -1,6 +1,7 @@
 import React from "react";
 import Searchbar from "./Searchbar";
 import Login from "./Login";
+import Burger from "./Burger";
 
 const Navbar = () => {
   return (
@@ -9,7 +10,7 @@ const Navbar = () => {
       <div className="flex flex-row w-full">
         <Searchbar />
         <Login />
-        <div>Burger</div>
+        <Burger />
       </div>
     </div>
   );

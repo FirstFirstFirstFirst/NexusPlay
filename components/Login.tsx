@@ -1,9 +1,14 @@
-import React from 'react'
+import React from "react";
 
 const Login = () => {
   return (
-    <div>Login</div>
-  )
-}
+    <div
+      className="w-32
+  flex items-center justify-center border border-black rounded-full uppercase"
+    >
+      Login
+    </div>
+  );
+};
 
-export default Login
+export default Login;
