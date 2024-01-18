@@ -39,7 +39,7 @@ const GameCarousel = () => {
               alt={`Previous`}
               width={1000}
               height={1000}
-              className="opacity-50 object-cover h-[520px] rounded-3xl"
+              className="opacity-50 object-cover h-[380px] rounded-3xl"
             />
           </div>
         </div>
