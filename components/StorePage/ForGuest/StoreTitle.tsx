@@ -5,7 +5,7 @@ const StoreTitle = () => {
     <div >
 
       {/*Display zone  */}
-      <div className='bg-white opacity-30 '>
+      <div className='bg-white  w-[1027px]'>
         <Top />
       </div>
     </div>
