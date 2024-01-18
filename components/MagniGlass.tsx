@@ -1,23 +1,24 @@
 import React from "react";
 
-const Burger = () => {
+const MagniGlass = () => {
   return (
-    <div className="flex items-center">
+    <div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
-        width="52"
-        height="52"
+        width="24"
+        height="24"
         fill="none"
-        stroke="#B30000"
+        stroke="currentColor"
         stroke-width="2"
         stroke-linecap="round"
         stroke-linejoin="round"
       >
-        <path d="M3 12h18M3 6h18M3 18h18" />
+        <circle cx="11" cy="11" r="8" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
       </svg>
     </div>
   );
 };
 
-export default Burger;
+export default MagniGlass;
