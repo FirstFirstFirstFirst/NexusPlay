@@ -14,7 +14,7 @@ const Navbar = () => {
         <Burger />
       </div>
     </div>
-  );
+    );
 };
 
 export default Navbar;

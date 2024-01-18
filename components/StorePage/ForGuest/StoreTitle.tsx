@@ -1,11 +1,13 @@
 import React from 'react'
-
+import Top from './Top'
 const StoreTitle = () => {
   return (
-    <div className='h-[1160px]  bg-gradient-to-l from-black to-[#B00101]'>
+    <div >
 
       {/*Display zone  */}
-      <div className='h-[1160px] w-[1027px]'></div>
+      <div className='bg-white opacity-30 '>
+        <Top />
+      </div>
     </div>
   )
 }
