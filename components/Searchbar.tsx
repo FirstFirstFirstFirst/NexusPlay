@@ -23,7 +23,7 @@ const SearchBar = () => {
       <MagniGlass />
       <input
         type="text"
-        className="text-white bg-white bg-opacity-0"
+        className="text-white bg-transparent outline-none border-none placeholder-white bg-opacity-0"
         placeholder="Search..."
         value={query}
         onChange={handleSearch}

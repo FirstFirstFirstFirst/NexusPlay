@@ -22,7 +22,7 @@ const GameCarousel = () => {
 
   return (
     <div className="relative">
-      <div className="flex w-full h-[640px]">
+      <div className="flex w-full h-[480px]">
         <div className="absolute flex items-center px-10 w-full h-full justify-between">
           <div className="relative flex items-center justify-center">
             <Image
@@ -30,7 +30,7 @@ const GameCarousel = () => {
               alt={`Previous`}
               width={1000}
               height={1000}
-              className="opacity-50 object-cover h-[520px] rounded-3xl"
+              className="opacity-50 object-cover h-[380px] rounded-3xl"
             />
           </div>
           <div className="relative flex items-center justify-center">
