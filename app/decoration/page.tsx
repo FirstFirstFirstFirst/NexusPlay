@@ -1,18 +1,25 @@
+import YourToken from "@/components/YourToken";
 import React from "react";
 
 function page() {
   return (
     <>
-      <div className=" w-screen h-screen bg-gradient-to-r from-[#B30000] to-black">
-        <div className=" w-full h-[20%] flex text-white justify-between items-center">
-          <div className=" flex items-center">
-            <div className="h-[80%] w-10">asdf</div>
-            <div className=" text-[60px]">Decoraion Store</div>
+      <div className=" w-full h-[100rem] bg-gradient-to-r from-[#B30000] to-black">
+        {/* Decoration tital  */}
+        <div className=" p-5 flex h-[10%] w-full flex-col">
+          <div className=" w-full h-full flex text-white justify-between items-center ">
+            <div className=" flex items-center  ">
+              <div className="h-[80%] w-10">pag logo</div>
+              <div className=" text-[60px]">Decoraion Store</div>
+            </div>
+            <YourToken />
           </div>
-          <div className=" flex h-fit items-center justify-center">
-            <div>Your Tokens</div>
-            <div>100000000</div>
-            <div>NXC</div>
+          <div className=" w-full h-[10%] flex text-white justify-between items-center ">
+            <div className=" w-[5%] bg-white text-red-500 rounded-full">
+              <div>All</div>
+              <div></div>
+            </div>
+            <div>cart</div>
           </div>
         </div>
       </div>
