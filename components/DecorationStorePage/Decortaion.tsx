@@ -2,7 +2,7 @@ import React from "react";
 
 function Decoraion() {
   return (
-    <div className=" w-full h-[20rem] bg-white  rounded-[20px] p-4">
+    <div className=" w-full h-[20rem] bg-white  rounded-[20px] p-4 overflow-auto">
       <div className="h-[65%] bg-[#D9D9D9]  rounded-[16px] flex justify-center items-center ">
         <div>image</div>
       </div>
