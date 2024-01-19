@@ -1,7 +1,7 @@
 import React , {useState} from 'react'
 import Preveiw from './Preveiw'
 const Overveiw = () => {
-      const [active, isactive] = useState<boolean>(true);
+      const [active, isactive] = useState<boolean>(false);
   return (
     <div >
       <Preveiw />
