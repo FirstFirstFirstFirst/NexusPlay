@@ -26,7 +26,7 @@ const Overveiw = () => {
             height={40} />
       </div>
       <div className='text-white text-sm mt-8'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Viverra adipiscing at in tellus. Tempus urna et pharetra pharetra massa massa ultricies. Egestas egestas fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Habitant morbi tristique senectus et netus et. Arcu bibendum at varius vel. Tristique et egestas quis ipsum suspendisse. Eget egestas purus viverra accumsan in nisl nisi. Nec feugiat nisl pretium fusce. Amet cursus sit amet dictum sit amet justo donec. Lorem ipsum dolor sit amet, consecte...</div>
-      <button className='bg-white w-full mt-2  h-8 rounded-xl'>Show More</button>
+      <button className=' bg-white w-full mt-2  h-8 rounded-xl'>Show More</button>
     </div>
   )
 }

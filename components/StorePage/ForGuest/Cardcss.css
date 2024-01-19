@@ -1,0 +1,10 @@
+.card::after {
+  position: absolute;
+  display: block;
+  background-color: black;
+  width: inherit;
+  left: 0;
+  top: 0;
+  height: inherit;
+
+}

@@ -17,8 +17,8 @@ const StoreDisplay = () => {
       <div className='  w-[850px]'>
         <Top handleVitories={() => {isactive(false)}} handleveiw={() => {isactive(true)}} active={active}/>
       </div>
-      <div className='mt-3 w-[850px]'>
-        {active ? <Overveiw /> : <Vitories />}
+      <div className={`mt-3 w-[850px]`}>
+        {active ? <Overveiw /> : <Vitories Cardcount={6}/>}
       </div>
     </div>
   )
