@@ -5,7 +5,7 @@ import React from "react";
 
 function page() {
   return (
-    <div className=" w-full h-[100rem]">
+    <div className=" w-full h-[70rem]">
       {/* Decoration tital  */}
       <div className=" px-5 flex h-full w-full flex-col">
         <div className=" w-full h-[7%] flex text-white justify-between items-center ">
@@ -20,9 +20,9 @@ function page() {
           <div>Your </div>
      
         </div> */}
-        <div className=" flex">
-          <div className=" flex w-[70%]">
-            <DecoraionDisplay numberOfColumns={3} />
+        <div className=" flex h-full w-full">
+          <div className=" flex h-full w-[70%]">
+            <DecoraionDisplay numberOfColumns={3} typeOfbaner={"cart"}  />
           </div>
           <div className=" w-[30%]  h-[50%] p-10">
             <DecorationSummary />
