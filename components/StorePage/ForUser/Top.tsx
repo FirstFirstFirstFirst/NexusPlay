@@ -12,7 +12,7 @@ type TopProps = {
 const Top:React.FC<TopProps> = ({active,handleVitories,handleveiw}) => {
 
   return (
-    <div className='flex flex-row justify-between items-center w-[100%]'>
+    <div className='flex flex-row justify-between items-center w-[inherit]'>
       <p className='text-3xl text-white font-bold'>Game Name</p>
       <PageToggle handleVitories={(handleVitories)} handleveiw={handleveiw} active={active}/>
     </div>
