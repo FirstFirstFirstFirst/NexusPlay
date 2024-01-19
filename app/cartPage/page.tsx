@@ -1,10 +1,11 @@
+import DecorationSummary from "@/components/CartPage/DecorationSummary";
 import DecoraionDisplay from "@/components/DecorationStorePage/DecorationPanal";
 import YourToken from "@/components/DecorationStorePage/YourToken";
 import React from "react";
 
 function page() {
   return (
-    <div className=" w-full h-[100rem]">
+    <div className=" w-full h-[70rem]">
       {/* Decoration tital  */}
       <div className=" px-5 flex h-full w-full flex-col">
         <div className=" w-full h-[7%] flex text-white justify-between items-center ">
@@ -15,27 +16,16 @@ function page() {
           </div>
           <YourToken />
         </div>
-        <div className=" w-full h-[4%] flex text-white justify-between items-center px-10 ">
-          <div className=" w-[10%] h-10 bg-white text-red-500 rounded-full flex justify-center items-center gap-5 p-2">
-            <div className="w-[70%] text-center">All</div>
-            <div>Y</div>
-          </div>
-          <div className=" w-[10%] h-10 bg-white text-red-500 rounded-full flex justify-around items-center gap-1 p-2">
-            <div className=" text-center">I.cart</div>
-            <div className="h-full border-l border-gray-500"></div>
-            <div>100</div>
-          </div>
-        </div>
-        <div className=" flex">
-          <div className=" flex w-[70%]">
-            <DecoraionDisplay numberOfColumns={3} />
+        {/* <div className=" w-full h-[4%] flex text-white justify-between items-center px-10 ">
+          <div>Your </div>
+     
+        </div> */}
+        <div className=" flex h-full w-full">
+          <div className=" flex h-full w-[70%]">
+            <DecoraionDisplay numberOfColumns={3} typeOfbaner={"cart"}  />
           </div>
           <div className=" w-[30%]  h-[50%] p-10">
-            <div className="  bg-white">
-              <div className=" text-center font-bold text-xl">
-                Decoration Summary
-              </div>
-            </div>
+            <DecorationSummary />
           </div>
         </div>
       </div>

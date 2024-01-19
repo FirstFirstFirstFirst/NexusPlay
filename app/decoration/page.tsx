@@ -26,7 +26,7 @@ function page() {
               <div>100</div>
             </div>
           </div>
-          <DecoraionDisplay numberOfColumns={4} />
+          <DecoraionDisplay numberOfColumns={4} typeOfbaner={"store"} />
         </div>
       </div>
     </>
