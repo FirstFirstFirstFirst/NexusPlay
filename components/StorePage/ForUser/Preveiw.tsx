@@ -1,7 +1,12 @@
 import React,{useState} from 'react'
 import Image from 'next/image';
 import games from '@/constants/games';
-const Preveiw = () => {
+
+type PreveiwProps = {
+  Id: number;
+}
+
+const Preveiw:React.FC<PreveiwProps> = ({Id}) => {
   const [game , setGame] = useState(0);
   const handleNext = () => {
     if (game !== games.length - 1) {
@@ -28,11 +33,11 @@ const Preveiw = () => {
     <div>
       <div className='flex flex-row justify-center items-center'>
 
-      <Image src={games[game].photo}
+      <Image src={games[Id -1].photo[game]}
     alt='Wait for api'
     width={12000}
     height={1200} 
-    className='w-[1360px]'
+    className='w-[1360px] h-[906.66px] object-cover]'
     />
       </div>
       <div className='flex flex-row justify-center'>
@@ -60,14 +65,15 @@ const Preveiw = () => {
 
           <div className='flex flex-row justify-between gap-4'>
             
-            {games.map(eachgame => 
+            {games[Id - 1].photo.map((eachgame,index) => 
               <Image 
-              onClick={()=>{setGame(eachgame.id - 1); }}
-              key={eachgame.id} 
-              src={eachgame.photo}
+              onClick={()=>{setGame(index); }}
+              key={index} 
+              src={eachgame}
               alt='Wait for api'
               width={100}
-              height={40} />
+              height={40}
+              className={`w-[160px] h-[115px]`} />
             )}
           </div>
             
