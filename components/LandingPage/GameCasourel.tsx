@@ -48,16 +48,14 @@ const GameCarousel = () => {
           </div>
         </div>
 
-        <div
-          className="relative w-full px-36 cursor-pointer"
-          onClick={() => handleGameClicked(currentIndex)}
-        >
+        <div className="relative w-full px-36">
           <Image
             src={games[currentIndex].photo}
             alt={`Current`}
             width={1440}
             height={1000}
-            className="w-full h-full object-cover rounded-2xl"
+            className="w-full h-full object-cover rounded-2xl cursor-pointer"
+            onClick={() => handleGameClicked(currentIndex)}
           />
         </div>
 
