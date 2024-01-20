@@ -13,7 +13,7 @@ const decortaions = [
         id: 2,
         name: "Yasuo profile",
         type:
-            "Profile Icon",
+            "Background Profile",
         price: 20.99,
         game:"League of Legends",
         photo:
@@ -23,7 +23,7 @@ const decortaions = [
         id: 3,
         name: "Yasuo profile",
         type:
-            "Profile Icon",
+            "sticker",
         price: 20.99,
         game:"League of Legends",
         photo:
