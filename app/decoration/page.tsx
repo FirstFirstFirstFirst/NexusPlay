@@ -13,9 +13,17 @@ interface decorationtype {
   photo: string;
 }
 function Page() {
-  const [Cart, setCart] = useState([]);
+  const [Cart, setCart] = useState<decorationtype[]>([]);
+
   function addToCart(decoration: decorationtype) {
-    Cart.push(decoration)
+    if (Cart?.length != 0) {
+      const newCart = [...Cart, decoration];
+      setCart(newCart);
+      
+    } else {
+      Cart.push(decoration)
+    }
+
   }
   return (
     <>
