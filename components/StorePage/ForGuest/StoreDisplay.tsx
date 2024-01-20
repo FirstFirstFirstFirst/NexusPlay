@@ -5,7 +5,10 @@ import Top from './Top'
 import Overveiw from './Overveiw'
 import Vitories from './Vitories'
 
-const StoreDisplay = () => {
+type StoreDisplayProps = {
+  id: number;
+}
+const StoreDisplay:React.FC<StoreDisplayProps> = ({id}) => {
 
   const [active, isactive] = useState<boolean>(true);
 
@@ -18,7 +21,7 @@ const StoreDisplay = () => {
         <Top handleVitories={() => {isactive(false)}} handleveiw={() => {isactive(true)}} active={active}/>
       </div>
       <div className={`mt-3 w-[850px]`}>
-        {active ? <Overveiw /> : <Vitories Cardcount={6}/>}
+        {active ? <Overveiw id={id}/> : <Vitories id={id} Cardcount={6}/>}
       </div>
     </div>
   )

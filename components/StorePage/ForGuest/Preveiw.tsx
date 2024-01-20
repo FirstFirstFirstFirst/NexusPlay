@@ -1,10 +1,14 @@
 import React,{useState} from 'react'
 import Image from 'next/image';
 import games from '@/constants/games';
-const Preveiw = () => {
+
+type PreveiwProps = {
+  Id: number;
+}
+const Preveiw:React.FC<PreveiwProps> = ({Id}) => {
   const [game , setGame] = useState(0);
   const handleNext = () => {
-    if (game !== games.length - 1) {
+    if (game !== games[Id - 1].photo.length - 1) {
       setGame(game + 1);
       return;
     } else {
@@ -19,7 +23,7 @@ const Preveiw = () => {
       setGame(game - 1);
       return;
     } else {
-      setGame(games.length - 1);
+      setGame(games[Id - 1].photo.length - 1);
       return;
     }
     
@@ -28,14 +32,13 @@ const Preveiw = () => {
     <>
    
     <Image
-      src={games[game].photo}
+      src={games[Id - 1].photo[game]}
       alt='Wait for api'
       width={1200}
       height={100}
-      className="transition-opacity duration-500"
+      className="transition-opacity w-[850px] object-cover h-[566.66px] overflow-hidden duration-500"
     />
-<div className='relative overflow-hidden flex flex-row gap-3 justify-center mt-2'>
-
+<div className='relative overflow-hidden flex flex-row gap-3 justify-between mt-2'>
 
 
 <button onClick={handlePrev}>
@@ -57,16 +60,20 @@ const Preveiw = () => {
 
 
 
+    <div className='flex flex-row justify-between gap-4'>
 
-    {games.map(eachgame => 
+    {games[Id - 1].photo.map((eachgame,index) => 
       <Image 
-      onClick={()=>{setGame(eachgame.id - 1); }}
-      key={eachgame.id} 
-      src={eachgame.photo}
+      onClick={()=>{setGame(index); }}
+      key={index} 
+      src={eachgame}
       alt='Wait for api'
-      width={70}
-      height={40} />
+      width={90}
+      height={70}
+      className='w-[90px] h-[70px]'
+       />
     )}
+          </div>
     
       
 
