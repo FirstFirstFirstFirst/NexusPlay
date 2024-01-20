@@ -1,6 +1,6 @@
-import GameCasourel from "@/components/GameCasourel";
-import Navbar from "@/components/Navbar";
-import Trending from "@/components/Trending";
+import GameCasourel from "@/components/LandingPage/GameCasourel";
+
+import Trending from "@/components/LandingPage/Trending";
 import React from "react";
 
 const page = () => {
