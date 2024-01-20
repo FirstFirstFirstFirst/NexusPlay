@@ -2,12 +2,13 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import games from "@/constants/games";
+import { useRouter } from "next/navigation";
 
 const GameCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const prevIndex = (currentIndex - 1 + games.length) % games.length;
   const nextIndex = (currentIndex + 1) % games.length;
-
+  const router = useRouter();
   const handlePrev = () => {
     setCurrentIndex(prevIndex);
   };
@@ -19,12 +20,15 @@ const GameCarousel = () => {
   const handleDotClick = (index: number) => {
     setCurrentIndex(index);
   };
-
+  const handleGameClicked = (id: number) => {
+    //to do: function to check is this user logged in or not and check are they bought it or no
+    router.push(`/StorePage/Buy/${id}`);
+  };
   return (
     <div className="relative">
       <div className="flex w-full h-[480px]">
         <div className="absolute flex items-center px-10 w-full h-full justify-between">
-          <div className="relative flex items-center justify-center">
+          <div className="relative flex items-center justify-center cursor-pointer">
             <Image
               src={games[prevIndex].photo}
               alt={`Previous`}
@@ -33,7 +37,7 @@ const GameCarousel = () => {
               className="opacity-50 object-cover h-[380px] rounded-3xl"
             />
           </div>
-          <div className="relative flex items-center justify-center">
+          <div className="relative flex items-center justify-center cursor-pointer">
             <Image
               src={games[nextIndex].photo}
               alt={`Previous`}
@@ -44,7 +48,10 @@ const GameCarousel = () => {
           </div>
         </div>
 
-        <div className="relative w-full px-36">
+        <div
+          className="relative w-full px-36 cursor-pointer"
+          onClick={() => handleGameClicked(currentIndex)}
+        >
           <Image
             src={games[currentIndex].photo}
             alt={`Current`}
