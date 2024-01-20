@@ -55,7 +55,7 @@ const GameCarousel = () => {
             width={1440}
             height={1000}
             className="w-full h-full object-cover rounded-2xl cursor-pointer"
-            onClick={() => handleGameClicked(currentIndex)}
+            onClick={() => handleGameClicked(currentIndex+1)}
           />
         </div>
 
