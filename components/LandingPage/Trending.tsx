@@ -1,7 +1,7 @@
 "use client";
+import { useRouter } from "next/navigation";
 import games from "@/constants/games";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
 import React from "react";
 
 const Trending = () => {
@@ -17,7 +17,7 @@ const Trending = () => {
         {games.map((game) => (
           <div
             key={game.id}
-            className="flex flex-col items-center xl:w-fit h-auto rounded-xl bg-white"
+            className="flex flex-col items-center xl:w-fit h-auto rounded-xl bg-white cursor-pointer"
             onClick={() => handleGameClicked(game.id)}
           >
             <div className="relative">
