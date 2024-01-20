@@ -10,8 +10,7 @@ const Vitories:React.FC<VitoriesProps> = ({Cardcount}) => {
   const cardsArray = Array.from({ length: Cardcount }, (_, index) => index);
   return (
     <div>
-      <Preveiw />
-      <div className='grid grid-cols-3 gap-[10px]'>
+      <div className='grid grid-row-1 gap-[10px]'>
       {cardsArray.map((_, index) => <Card key={index} />)}
       </div>
       </div>

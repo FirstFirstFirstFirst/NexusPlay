@@ -14,10 +14,10 @@ const StoreDisplay = () => {
     <div >
 
       {/*Display zone  */}
-      <div className='  w-[1200px]'>
+      <div className='  w-[1390px]'>
         <Top handleVitories={() => {isactive(false)}} handleveiw={() => {isactive(true)}} active={active}/>
       </div>
-      <div className={`mt-3 w-[1200px]`}>
+      <div className={`mt-3 w-[1390px]`}>
         {active ? <Overveiw /> : <Vitories Cardcount={6}/>}
       </div>
     </div>

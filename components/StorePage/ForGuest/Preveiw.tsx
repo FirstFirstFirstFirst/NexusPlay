@@ -34,8 +34,7 @@ const Preveiw = () => {
       height={100}
       className="transition-opacity duration-500"
     />
-<div className='relative overflow-hidden flex flex-row gap-3 justify-center mt-2'>
-
+<div className='relative overflow-hidden flex flex-row gap-3 justify-between mt-2'>
 
 
 <button onClick={handlePrev}>
@@ -57,6 +56,7 @@ const Preveiw = () => {
 
 
 
+    <div className='flex flex-row justify-between gap-4'>
 
     {games.map(eachgame => 
       <Image 
@@ -67,6 +67,7 @@ const Preveiw = () => {
       width={70}
       height={40} />
     )}
+          </div>
     
       
 

@@ -19,20 +19,25 @@ const Card = () => {
         </div>
       </div>
       <div className='w-full flex flex-row justify-center h-11'>
-      <button data-set={buttonText} className={`after:content-[attr(data-set)] 
-      after:flex 
-      after:absolute 
-    after:text-[white] 
-      hover:after:top-0 
-      after:transition-all 
-      after:top-full 
-      after:left-0 
-      after:w-full 
-      after:h-full 
-      after:items-center 
-      after:justify-center 
-      after:bg-black 
-      overflow-hidden relative mt-3 w-[85%] rounded-xl border text-[14px] text-center border-black`}>
+      <button data-set={'Must own the game to proceed.'} className={`after:content-[attr(data-set)] 
+      after:absolute
+      after:flex
+      after:justify-center
+      after:items-center
+      after:left-[50%]
+      after:translate-x-[-50%]
+      after:w-[175px]
+      after:rounded-[4px]
+      after:h-[20px]
+      hover:after:opacity-[.8]
+      after:opacity-0
+      after:bg-[#e6e6e6]
+      after:top-[130%]
+      after:text-[10px]
+      after:transition
+      after-ease-out
+      after:duration-[350ms]
+       relative mt-3 w-[85%] rounded-xl border text-[14px] text-center border-black`}>
         {buttonText}</button>
 
       </div>
