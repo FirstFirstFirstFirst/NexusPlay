@@ -1,8 +1,8 @@
 import DecorationSummary from "@/components/CartPage/DecorationSummary";
-import DecoraionDisplay from "@/components/DecorationStorePage/DecorationPanal";
 import YourToken from "@/components/DecorationStorePage/YourToken";
 import React from "react";
-
+import Decoraion from "@/components/DecorationStorePage/Decortaion";
+import decorations from "@/constants/decoration";
 function page() {
   return (
     <div className=" w-full h-[70rem]">
@@ -16,13 +16,20 @@ function page() {
           </div>
           <YourToken />
         </div>
-        {/* <div className=" w-full h-[4%] flex text-white justify-between items-center px-10 ">
-          <div>Your </div>
-     
-        </div> */}
+
         <div className=" flex h-full w-full">
           <div className=" flex h-full w-[70%]">
-            <DecoraionDisplay numberOfColumns={3} typeOfbaner={"cart"}  />
+            <div className=" h-[80%] w-full bg-white bg-opacity-60 rounded-[20px]">
+              <div className={`h-auto m-5 grid grid-cols-3 gap-4`}>
+                {decorations.map((decoration) => (
+                  <Decoraion
+                    btype={"cart"}
+                    key={decoration.id}
+                    decorations={decoration}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
           <div className=" w-[30%]  h-[50%] p-10">
             <DecorationSummary />

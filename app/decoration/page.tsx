@@ -1,8 +1,22 @@
-import DecoraionDisplay from "@/components/DecorationStorePage/DecorationPanal";
+"use client";
+import Decoraion from "@/components/DecorationStorePage/Decortaion";
 import YourToken from "@/components/DecorationStorePage/YourToken";
-import React from "react";
+import decorations from "@/constants/decoration";
+import { useState } from "react";
 
-function page() {
+interface decorationtype {
+  id: number;
+  name: string;
+  type: string;
+  price: number;
+  game: string;
+  photo: string;
+}
+function Page() {
+  const [Cart, setCart] = useState([]);
+  function addToCart(decoration: decorationtype) {
+    Cart.push(decoration)
+  }
   return (
     <>
       <div className=" w-full h-[100rem]">
@@ -26,11 +40,21 @@ function page() {
               <div>100</div>
             </div>
           </div>
-          <DecoraionDisplay numberOfColumns={4} typeOfbaner={"store"} />
+          <div className=" h-[80%] w-full bg-white bg-opacity-60 rounded-[20px]">
+            <div className="h-auto  m-5 grid grid-cols-4 gap-4">
+              {decorations.map((decoration) => (
+                <Decoraion
+                  btype={"store"}
+                  key={decoration.id}
+                  decorations={decoration}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </>
   );
 }
 
-export default page;
+export default Page;
