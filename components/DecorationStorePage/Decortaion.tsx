@@ -12,10 +12,12 @@ interface DecorationDisplayProps {
   };
 
   btype: string;
+  workfunction: Function
 }
 function Decoraion({
- decorations,
+  decorations,
   btype,
+  workfunction,
 }: DecorationDisplayProps) {
   if (btype === "store") {
     return (
@@ -33,37 +35,34 @@ function Decoraion({
             <div className="pt-2">
               <span>{decorations.price} NXC</span>
             </div>
-            <Addbutton />
+            <Addbutton addtocart={workfunction} obj={decorations} />
+          </div>
+        </div>
+      </div>
+    );
+  } else if (btype === "cart") {
+    return (
+      <div className=" w-full h-[20rem] bg-white drop-shadow-xl  rounded-[20px] p-4 overflow-auto">
+        <div className="h-[65%] bg-[#D9D9D9]  rounded-[16px] flex justify-center items-center ">
+          <div>image</div>
+        </div>
+        <div className="h-[35%] p-2  flex  ">
+          <div className="h-full w-[50%] flex  flex-col justify-around">
+            <div className="text-xl">{decorations.name}</div>
+            <div>{decorations.type}</div>
+            <div>{decorations.game}</div>
+          </div>
+          <div className="w-[50%]  flex flex-col justify-between items-center">
+            <div className="pt-2">
+              <span>{decorations.price} NXC</span>
+            </div>
+            <RemoveButton />
           </div>
         </div>
       </div>
     );
   }
-  else if (btype === "cart") {
-     return (
-       <div className=" w-full h-[20rem] bg-white drop-shadow-xl  rounded-[20px] p-4 overflow-auto">
-         <div className="h-[65%] bg-[#D9D9D9]  rounded-[16px] flex justify-center items-center ">
-           <div>image</div>
-         </div>
-         <div className="h-[35%] p-2  flex  ">
-           <div className="h-full w-[50%] flex  flex-col justify-around">
-             <div className="text-xl">{decorations.name}</div>
-             <div>{decorations.type}</div>
-             <div>{decorations.game}</div>
-           </div>
-           <div className="w-[50%]  flex flex-col justify-between items-center">
-             <div className="pt-2">
-               <span>{decorations.price} NXC</span>
-             </div>
-             <RemoveButton />
-           </div>
-         </div>
-       </div>
-     );
-  }
-  return (
-    <div>Plese enter the type </div>
-  );
+  return <div>Plese enter the type </div>;
 }
 
 export default Decoraion;

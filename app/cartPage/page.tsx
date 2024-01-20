@@ -1,3 +1,4 @@
+"use client";
 import DecorationSummary from "@/components/CartPage/DecorationSummary";
 import YourToken from "@/components/DecorationStorePage/YourToken";
 import React from "react";
@@ -21,13 +22,13 @@ function page() {
           <div className=" flex h-full w-[70%]">
             <div className=" h-[80%] w-full bg-white bg-opacity-60 rounded-[20px]">
               <div className={`h-auto m-5 grid grid-cols-3 gap-4`}>
-                {decorations.map((decoration) => (
-                  <Decoraion
-                    btype={"cart"}
-                    key={decoration.id}
-                    decorations={decoration}
-                  />
-                ))}
+                {/* {decorations.map((decoration) => (
+                  // <Decoraion
+                  //   btype={"cart"}
+                  //   key={decoration.id}
+                  //   decorations={decoration}
+                  // />
+                ))} */}
               </div>
             </div>
           </div>
