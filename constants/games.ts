@@ -1,4 +1,11 @@
-const games = [
+export interface Game {
+  id: number;
+  name: string;
+  description: string;
+  price: number;
+  photo: string;
+}
+const games: Game[] = [
   {
     id: 1,
     name: "The Legend of Zelda: Breath of the Wild",
