@@ -30,7 +30,7 @@ const GameCarousel = () => {
         <div className="absolute flex items-center px-10 w-full h-full justify-between">
           <div className="relative flex items-center justify-center cursor-pointer">
             <Image
-              src={games[prevIndex].photo}
+              src={games[prevIndex].photo[0]}
               alt={`Previous`}
               width={1000}
               height={1000}
@@ -39,7 +39,7 @@ const GameCarousel = () => {
           </div>
           <div className="relative flex items-center justify-center cursor-pointer">
             <Image
-              src={games[nextIndex].photo}
+              src={games[nextIndex].photo[0]}
               alt={`Previous`}
               width={1000}
               height={1000}
@@ -50,7 +50,7 @@ const GameCarousel = () => {
 
         <div className="relative w-full px-36">
           <Image
-            src={games[currentIndex].photo}
+            src={games[currentIndex].photo[0]}
             alt={`Current`}
             width={1440}
             height={1000}

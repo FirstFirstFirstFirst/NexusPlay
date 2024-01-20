@@ -52,7 +52,7 @@ const SearchBar = () => {
               >
                 <div className="relative">
                   <Image
-                    src={game.photo}
+                    src={game.photo[0]}
                     alt={"/"}
                     width={50}
                     height={50}

@@ -22,7 +22,7 @@ const Trending = () => {
           >
             <div className="relative">
               <Image
-                src={game.photo}
+                src={game.photo[0]}
                 alt={game.name}
                 width={500}
                 height={570}
