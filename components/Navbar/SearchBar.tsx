@@ -30,7 +30,7 @@ const SearchBar = () => {
         <MagniGlass />
         <input
           type="text"
-          className="text-white bg-transparent outline-none border-none placeholder-white bg-opacity-0 z-10"
+          className="text-white bg-transparent outline-none border-none placeholder-white bg-opacity-0 z-10 w-full"
           placeholder="Search..."
           value={query}
           onChange={handleSearch}
@@ -42,7 +42,7 @@ const SearchBar = () => {
             {filteredGames.map((game) => (
               <div
                 key={game.id}
-                className="p-3 flex flex-row gap-4 items-center justify-start"
+                className="p-3 flex flex-row gap-4 items-center justify-start hover:underline"
               >
                 <div className="relative">
                   <Image
