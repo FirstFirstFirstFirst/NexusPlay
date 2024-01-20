@@ -1,11 +1,12 @@
 "use client";
 import React from "react";
 import Login from "./Login";
-import Burger from "./Burger";
 import SearchBar from "./SearchBar";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import Logo from "@/public/logo.png"
+import Logo from "@/public/logo.png";
+import ConnectWalletButton from "./ConnectWalletButton";
+
 const Navbar = () => {
   const router = useRouter();
   return (
@@ -16,17 +17,13 @@ const Navbar = () => {
           router.push("/");
         }}
       >
-        <Image
-          src={Logo} 
-          alt=""
-          width={100}
-          height={100}
-        />
+        <Image src={Logo} alt="" width={100} height={100} />
       </div>
-      <div className="flex flex-row w-2/3 gap-8 justify-end">
+
+      <div className="flex flex-row w-2/3 gap-4 justify-end items-center">
         <SearchBar />
         <Login />
-        {/* <Burger /> */}
+        <ConnectWalletButton />
       </div>
     </div>
   );

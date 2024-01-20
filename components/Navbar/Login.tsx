@@ -6,7 +6,7 @@ const Login = () => {
   const router = useRouter();
   return (
     <div
-      className="w-32 flex items-center justify-center border border-black rounded-full uppercase bg-[#B30000] cursor-pointer transition-all duration-300 hover:bg-[#9c0000]"
+      className="flex items-center justify-center border border-black rounded-lg uppercase bg-[#B30000] cursor-pointer transition-all duration-300 hover:bg-[#9c0000] py-3 px-5 h-12"
       onClick={() => {
         router.push(`/LoginPage`);
       }}

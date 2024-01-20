@@ -30,7 +30,7 @@ const SearchBar = () => {
     <div className="relative">
       <form
         onSubmit={handleSubmit}
-        className="flex flex-row gap-4 border border-black p-3 rounded-full w-96 bg-[#B30000] bg-opacity-50 z-10 relative"
+        className="flex flex-row gap-4 border border-black p-3 rounded-lg w-96 bg-[#B30000] bg-opacity-50 z-10 relative h-12 items-center"
       >
         <MagniGlass />
         <input
