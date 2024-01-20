@@ -4,13 +4,18 @@ import MagniGlass from "./MagniGlass";
 import React, { FormEvent, useEffect, useState } from "react";
 import { Game } from "@/constants/games";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [isFocused, setIsFocused] = useState(false);
   const filteredGames = games.filter((game) =>
     game.name.toLowerCase().includes(query.toLowerCase())
   );
-
+  const router = useRouter();
+  const handleGameClicked = (id: number) => {
+    //to do: function to check is this user logged in or not and check are they bought it or no
+    router.push(`/StorePage/Buy/${id}`);
+  };
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
     setQuery(e.target.value);
     console.log(`Searching for: ${query}`);
@@ -42,7 +47,8 @@ const SearchBar = () => {
             {filteredGames.map((game) => (
               <div
                 key={game.id}
-                className="p-3 flex flex-row gap-4 items-center justify-start hover:underline"
+                className="p-3 flex flex-row gap-4 items-center justify-start hover:underline cursor-pointer"
+                onMouseDown={() => handleGameClicked(game.id)}
               >
                 <div className="relative">
                   <Image
