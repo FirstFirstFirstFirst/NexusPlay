@@ -1,8 +1,15 @@
+"use client";
 import games from "@/constants/games";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 const Trending = () => {
+  const router = useRouter();
+  const handleGameClicked = (id: number) => {
+    //to do: function to check is this user logged in or not and check are they bought it or no
+    router.push(`/StorePage/Buy/${id}`);
+  };
   return (
     <div className="flex flex-col gap-12">
       <p className="text-6xl text-white">Trending</p>
@@ -11,6 +18,7 @@ const Trending = () => {
           <div
             key={game.id}
             className="flex flex-col items-center xl:w-fit h-auto rounded-xl bg-white"
+            onClick={() => handleGameClicked(game.id)}
           >
             <div className="relative">
               <Image
