@@ -1,5 +1,6 @@
-import React from "react";
-interface typeOfButton {
+import { useState } from "react";
+
+interface TypeOfButton {
   addtocart: Function;
   obj: {
     id: number;
@@ -11,19 +12,25 @@ interface typeOfButton {
   };
 }
 
-function Addbutton({ addtocart, obj }: typeOfButton) {
+function AddButton({ addtocart, obj }: TypeOfButton) {
+  const [added, setAdded] = useState(false);
+
+  const handleAddToCart = () => {
+    addtocart(obj);
+    setAdded(true);
+  };
+
   return (
     <button
       type="button"
-      className=" w-[50%] 
-             text-white bg-red-700 hover:bg-red-800  font-medium rounded-full text-sm px-5 py-2.5 text-center  "
-      onClick={() => {
-        addtocart(obj);
-      }}
+      className={`w-[50%] text-white font-medium rounded-full text-sm px-5 py-2.5 text-center ${
+        added ? "bg-gray-500 cursor-not-allowed" : "bg-red-700 hover:bg-red-800"
+      }`}
+      onClick={added ? undefined : handleAddToCart}
     >
-      ADD
+      {added ? "Added" : "ADD"}
     </button>
   );
 }
 
-export default Addbutton;
+export default AddButton;

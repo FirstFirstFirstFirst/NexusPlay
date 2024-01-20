@@ -13,7 +13,6 @@ interface decorationtype {
   game: string;
   photo: string;
 }
-// ... (previous imports and interfaces)
 
 function Page() {
   const router = useRouter();
@@ -26,25 +25,25 @@ function Page() {
     setCart((prevCart) => [...prevCart, decoration]);
     setNumofCart((prevNum) => prevNum + 1);
   }
+const handleCartClick = () => {
+  localStorage.setItem("cart", JSON.stringify(Cart));
+  router.push("/cartPage");
+};
 
-  const handleCartClick = () => {
-    router.push(`/cartPage`);
-  };
 
   const dropdownItems = [
     { id: 1, text: "Profile Icon" },
     { id: 2, text: "Background Profile" },
     { id: 3, text: "sticker" },
-    // Add more items as needed
   ];
 
   const handleDropdownToggle = () => {
-    setIsDropdownOpen((prev) => !prev); // Toggle dropdown state
+    setIsDropdownOpen((prev) => !prev);
   };
 
   const handleDropdownSelect = (type: string | null) => {
     setSelectedType(type);
-    setIsDropdownOpen(false); // Close the dropdown when an item is selected
+    setIsDropdownOpen(false);
   };
 
   const filteredDecorations = selectedType
@@ -53,14 +52,13 @@ function Page() {
 
   return (
     <>
-      <div className="w-full h-[100rem] relative">
+      <div className="w-full h-[100rem] relative overflow-hidden">
         <div className="px-5 flex h-full w-full flex-col">
           <div className="w-full h-[7%] flex text-white justify-between items-center">
             <div className="flex items-center">
               <div className="h-[80%] w-10">bag logo</div>
               <div className="text-[60px]">Decoration Store</div>
             </div>
-            {/* YourToken component */}
           </div>
           <div className="w-full h-[4%] flex text-white justify-between items-center px-10">
             <div className="relative inline-block">
@@ -69,7 +67,7 @@ function Page() {
                 className="text-red-500 bg-white w-[15rem] hover:bg-red-500  focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex justify-between items-center hover:text-white "
                 type="button"
               >
-                {selectedType ?  selectedType  : "All"}
+                {selectedType ? selectedType : "All"}
                 <svg
                   className={`w-2.5 h-2.5 ms-3 transform ${
                     isDropdownOpen ? "rotate-180" : ""
@@ -120,7 +118,7 @@ function Page() {
                 </ul>
               </div>
             </div>
-            {/* Cart button */}
+
             <button
               type="button"
               className="w-[10%] h-10 bg-white text-red-500 hover:bg-red-500 hover:text-white rounded-full relative gap-1 p-2"
@@ -135,7 +133,7 @@ function Page() {
               </div>
             </button>
           </div>
-          <div className="h-[80%] w-full bg-white bg-opacity-60 rounded-[20px]">
+          <div className="h-[80%] w-full bg-white bg-opacity-60 rounded-[20px] overflow-y-auto">
             <div className="h-auto m-5 grid grid-cols-4 gap-4">
               {filteredDecorations.map((decoration) => (
                 <Decoraion
@@ -154,6 +152,3 @@ function Page() {
 }
 
 export default Page;
-
-
-
