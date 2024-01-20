@@ -26,10 +26,14 @@ const Preveiw = () => {
   }
   return (
     <>
-      <Image src={games[game].photo}
-    alt='Wait for api'
-    width={1200}
-    height={100} />
+   
+    <Image
+      src={games[game].photo}
+      alt='Wait for api'
+      width={1200}
+      height={100}
+      className="transition-opacity duration-500"
+    />
 <div className='relative overflow-hidden flex flex-row gap-3 justify-center mt-2'>
 
 
