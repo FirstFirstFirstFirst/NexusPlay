@@ -6,32 +6,45 @@ import { WagmiConfig } from "wagmi";
 import { ChainIcon } from "connectkit";
 import LoadingSpin from "./LoadingSpin";
 import { fetchBalance } from "wagmi/actions";
+import useWalletStore from "@/utils/storewallet";
 interface FetchBalanceResult {
   decimals: number;
   formatted: string;
   symbol: string;
   value: bigint;
 }
+interface walletType {
+  isConnected: boolean;
+  addressWallet: string;
+  balanceOfAddress: number;
+}
 const ConnectWalletButton = () => {
   const [address, setAddress] = useState<`0x${string}`>();
   const [balance, setBalance] = useState<bigint>();
+  const [Displaybalance, setDisplayBalance] = useState(0);
+
   const [symbol, setSymbol] = useState<string>();
+  const { wallet, setWallet, updateBalance, login, logout } =
+    useWalletStore() as any;
   useEffect(() => {
     const getBalance = async () => {
       if (address) {
         try {
           const res: FetchBalanceResult = await fetchBalance({ address });
+          const token = Number(res.value) * 10 ** -18;
+          setDisplayBalance(token);
           setBalance(res.value);
           setSymbol(res.symbol);
+          setWallet({ address: address, balances: balance, isLogin: true });
+          console.log(wallet);
         } catch (error) {
-          // Handle error if necessary
           console.error("Error fetching balance:", error);
         }
       }
     };
-
     getBalance();
   }, [address]);
+  console.log("balance" + Number(balance));
   return (
     <WagmiConfig config={config}>
       <ConnectKitProvider
@@ -72,7 +85,7 @@ const ConnectWalletButton = () => {
                         id={chain?.id}
                         unsupported={chain?.unsupported}
                       />
-                      <div>{Number(balance)}</div>
+                      <div>{Number(Displaybalance)}</div>
                       <div>{symbol}</div>
                     </div>
                     <div className="flex items-center p-2 rounded-r-md bg-[#B30000]">
