@@ -6,6 +6,7 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Logo from "@/public/logo.png";
 import ConnectWalletButton from "./ConnectWalletButton";
+import Decoration from "./Decoration";
 
 const Navbar = () => {
   const router = useRouter();
@@ -22,6 +23,7 @@ const Navbar = () => {
 
       <div className="flex flex-row w-2/3 gap-4 justify-end items-center">
         <SearchBar />
+        <Decoration />
         <Login />
         <ConnectWalletButton />
       </div>

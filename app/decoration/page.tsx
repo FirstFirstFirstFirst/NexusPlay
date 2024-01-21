@@ -22,7 +22,7 @@ function Page() {
   const [NumofCart, setNumofCart] = useState(0);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false); // State to manage dropdown visibility
   const [selectedType, setSelectedType] = useState<string | null>(null); // State to keep track of the selected type
-
+  
   function addToCart(decoration: decorationtype) {
     setCart((prevCart) => [...prevCart, decoration]);
     setNumofCart((prevNum) => prevNum + 1);
