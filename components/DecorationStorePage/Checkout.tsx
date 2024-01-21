@@ -5,7 +5,7 @@ function Checkout() {
     <button
       type="button"
       className="  w-full h-full
-             text-white bg-yellow-400 drop-shadow-lg hover:bg-yellow-500  font-medium rounded-full text-2xl px-5 py-2.5 text-center  "
+             text-white bg-yellow-400 duration-500 hover:shadow-xl hover:bg-yellow-500  font-medium rounded-full text-2xl px-5 py-2.5 text-center  "
     >
       Payment
     </button>

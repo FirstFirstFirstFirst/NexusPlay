@@ -56,9 +56,9 @@ function Page() {
       <div className="w-full h-[100rem] relative overflow-hidden">
         <div className="px-5 flex h-full w-full flex-col">
           <div className="w-full h-[7%] flex text-white justify-between items-center">
-            <div className="flex items-center gap-4 ">
-              <div className="h-[80%] w-20">
-                <FontAwesomeIcon icon={faBagShopping} className=" w-full h-full" />
+            <div className="flex items-center gap-4 ml-6   ">
+              <div className="h-[80%] w-20  flex justify-center items-center">
+                <FontAwesomeIcon icon={faBagShopping} className="h-full text-4xl " />
               </div>
               <div className="text-[60px] font-bold translate-y-[10%] ">Decoration Store</div>
             </div>

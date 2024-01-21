@@ -5,6 +5,12 @@ import DecorationSummary from "@/components/CartPage/DecorationSummary";
 import YourToken from "@/components/DecorationStorePage/YourToken";
 import Decoraion from "@/components/DecorationStorePage/Decortaion";
 import decorations from "@/constants/decoration";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCartShopping,
+  faChevronLeft,
+} from "@fortawesome/free-solid-svg-icons";
+
 interface decorationtype {
   id: number;
   name: string;
@@ -79,12 +85,25 @@ function Page() {
 
   return (
     <div className=" w-full h-[70rem]">
-      {/* Decoration tital  */}
       <div className=" px-5 flex h-full w-full flex-col">
         <div className=" w-full h-[7%] flex text-white justify-between items-center ">
-          <div className=" flex items-center">
-            <div className="h-[80%] w-10">Return Icon</div>
-            <div className="h-[80%] w-10">cart Icon</div>
+          <div className=" w-full h-full flex items-center">
+            <div className="h-[80%] w-20 text-lg">
+              <div className="flex w-full h-full  items-center justify-center">
+                <button className=" w-[70%] hover:drop-shadow-2xl rounded-2xl text-[#B30000] bg-white opacity-95 h-[70%]">
+                  <FontAwesomeIcon
+                    icon={faChevronLeft}
+                    className=" h-full hover:drop-shadow-2xl"
+                    onClick={() => {
+                      router.back();
+                    }}
+                  />
+                </button>
+              </div>
+            </div>
+            <div className="h-[80%] flex justify-center items-center w-20 text-5xl">
+              <FontAwesomeIcon icon={faCartShopping} />
+            </div>
             <div className=" text-[60px]">Your Cart</div>
           </div>
           <YourToken />
@@ -95,18 +114,17 @@ function Page() {
             <div className=" h-[80%] w-full bg-white bg-opacity-60 rounded-[20px]">
               <div className=" h-[10%] flex flex-row-reverse">
                 <div
-                  className={`w-[12rem] my-auto mb-1 h-[70%] relative  rounded-l-full  ${
-                    selectAll ? "bg-green-500" : "bg-red-500"
+                  className={`w-[12rem] my-auto text-white drop-shadow-lg mb-1 h-[70%] relative  rounded-l-full  ${
+                    selectAll ? "bg-green-500" : "bg-[#B30000]"
                   } cursor-pointer`}
                   onClick={selectAllItems}
                 >
                   <input
-                    disabled
                     id="disabled-checkbox"
                     checked={selectAll}
                     type="checkbox"
                     value=""
-                    className="w-4 h-4 top-[50%] left-[25%] absolute translate-y-[-50%] text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
+                    className="w-4 h-4 top-[50%] z-[0] left-[25%] absolute translate-y-[-50%] text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
                   ></input>
                   <div className="top-[50%] left-[50%] absolute translate-y-[-50%] translate-x-[-25%]">
                     {selectAll ? "Unselect All" : "Select All"}
