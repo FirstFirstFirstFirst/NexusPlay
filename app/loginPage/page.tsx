@@ -3,8 +3,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import Link from 'next/link';
-import { UserContext, UserReducer } from '@/constants/context/user-context';
+
 
 function LoginPage() {
   const [checkInboxPage, setContinue] = useState(false);
@@ -17,16 +16,10 @@ function LoginPage() {
   function getEmail(email: string){
     setEmail(email);
   };
-  const initialUser = null;
-  const [user, dispatch] = React.useReducer(UserReducer, initialUser);
 
-  const value = React.useMemo(
-    () => ({ user: user, dispatch: dispatch }),
-    [user, dispatch]
-  );
 
   return (
-    <UserContext.Provider value={value}>
+    <>
       {checkInboxPage ? (
         <div className="w-screen h-[47rem]">
           <div className="flex flex-col justify-center items-center h-full bg-white drop-shadow-xl p-4 rounded-[20px] m-10 text-center">
@@ -47,6 +40,7 @@ function LoginPage() {
               </div>
             </div>
             <div className="mt-[70px] text-3xl">
+              {" "}
               Let`s keep the gaming vibes strong! 🎮
             </div>
           </div>
@@ -86,7 +80,7 @@ function LoginPage() {
           </div>
         </div>
       )}
-    </UserContext.Provider>
+    </>
   );
 }
 
