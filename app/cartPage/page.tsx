@@ -12,7 +12,7 @@ interface decorationtype {
   price: number;
   game: string;
   photo: string;
-  selected: boolean; // New property to track selection
+  selected: boolean;
 }
 function Page() {
   var storedNames = JSON.parse(localStorage.getItem("cart") as any);
@@ -46,6 +46,20 @@ function Page() {
     setCart(updatedCart);
     localStorage.setItem("cart", JSON.stringify(updatedCart));
     setSelectAll(!selectAll);
+  }
+  function toggleItemSelection(id: number) {
+    const updatedCart = Cart.map((decoration) =>
+      decoration.id === id
+        ? { ...decoration, selected: !decoration.selected }
+        : decoration
+    );
+
+    // Check if all items are selected to update the "Select All" state
+    const allSelected = updatedCart.every((decoration) => decoration.selected);
+    setSelectAll(allSelected);
+
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
   }
   // Use useEffect to run code after the component mounts
   function removeItem(id: number) {
@@ -106,7 +120,7 @@ function Page() {
                     key={decoration.id}
                     decorations={decoration}
                     workfunction={removeItem}
-                    otherfunstion={checkItem}
+                    otherfunstion={toggleItemSelection}
                   />
                 ))}
               </div>

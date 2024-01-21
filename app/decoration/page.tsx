@@ -2,6 +2,8 @@
 import Decoraion from "@/components/DecorationStorePage/Decortaion";
 import YourToken from "@/components/DecorationStorePage/YourToken";
 import decorations from "@/constants/decoration";
+import { faBagShopping, faCartShopping } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -25,11 +27,10 @@ function Page() {
     setCart((prevCart) => [...prevCart, decoration]);
     setNumofCart((prevNum) => prevNum + 1);
   }
-const handleCartClick = () => {
-  localStorage.setItem("cart", JSON.stringify(Cart));
-  router.push("/cartPage");
-};
-
+  const handleCartClick = () => {
+    localStorage.setItem("cart", JSON.stringify(Cart));
+    router.push("/cartPage");
+  };
 
   const dropdownItems = [
     { id: 1, text: "Profile Icon" },
@@ -55,16 +56,18 @@ const handleCartClick = () => {
       <div className="w-full h-[100rem] relative overflow-hidden">
         <div className="px-5 flex h-full w-full flex-col">
           <div className="w-full h-[7%] flex text-white justify-between items-center">
-            <div className="flex items-center">
-              <div className="h-[80%] w-10">bag logo</div>
-              <div className="text-[60px]">Decoration Store</div>
+            <div className="flex items-center gap-4 ">
+              <div className="h-[80%] w-20">
+                <FontAwesomeIcon icon={faBagShopping} className=" w-full h-full" />
+              </div>
+              <div className="text-[60px] font-bold translate-y-[10%] ">Decoration Store</div>
             </div>
           </div>
           <div className="w-full h-[4%] flex text-white justify-between items-center px-10">
             <div className="relative inline-block">
               <button
                 onClick={handleDropdownToggle}
-                className="text-red-500 bg-white w-[15rem] hover:bg-red-500  focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex justify-between items-center hover:text-white "
+                className="text-red-500 duration-300 bg-white w-[15rem] hover:bg-red-500  focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex justify-between items-center hover:text-white "
                 type="button"
               >
                 {selectedType ? selectedType : "All"}
@@ -121,11 +124,11 @@ const handleCartClick = () => {
 
             <button
               type="button"
-              className="w-[10%] h-10 bg-white text-red-500 hover:bg-red-500 hover:text-white rounded-full relative gap-1 p-2"
+              className="w-[10%] h-10 bg-white text-red-500 duration-300 hover:bg-red-500 hover:text-white rounded-full relative gap-1 p-2"
               onClick={handleCartClick}
             >
               <div className="text-center w-fit absolute left-[25%] translate-y-[-50%] translate-x-[-50%]">
-                I.cart
+                <FontAwesomeIcon icon={faCartShopping} />
               </div>
               <div className="h-[70%] border-l border-gray-500 w-fit absolute right-[50%] translate-y-[-50%]"></div>
               <div className="absolute right-[25%] translate-y-[-50%] translate-x-[50%]">
