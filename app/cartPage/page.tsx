@@ -21,9 +21,12 @@ interface decorationtype {
   selected: boolean;
 }
 function Page() {
-  var storedNames = JSON.parse(localStorage.getItem("cart") as any);
+  const storedNames =
+    typeof window !== "undefined"
+      ? JSON.parse(localStorage.getItem("cart") as any)
+      : null;
   const [selectAll, setSelectAll] = useState(false);
-  const [Cart, setCart] = useState<decorationtype[]>(storedNames);
+  const [Cart, setCart] = useState<decorationtype[]>(storedNames || []);
   const [price, setprice] = useState(0);
   const initialDecorations: decorationtype[] = decorations.map(
     (decoration) => ({

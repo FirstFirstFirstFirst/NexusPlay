@@ -1,22 +1,53 @@
-"use client"
+"use client";
 
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
-
+import { useRouter } from "next/navigation";
 
 function LoginPage() {
   const [checkInboxPage, setContinue] = useState(false);
   const [email, setEmail] = useState("");
+  const [showEnterPIN, setShowEnterPIN] = useState(false);
+  const router = useRouter();
+  function getEmail(email: string) {
+    setEmail(email);
+  }
 
-  const handleContinueClick = () => {
+  const handleEnterPINClick = () => {
+    setShowEnterPIN(!showEnterPIN);
+  };
+  // useEffect(() => {
+  //   const urlParams = new URLSearchParams(window.location.search);
+  //   const magicToken = urlParams.get("magic_token");
+  //   if (magicToken) {
+  //     console.log("Magic Token:", magicToken);
+  //   }
+  // }, []);
+  const handleContinueClick = async () => {
+    console.log("continue clicked");
+    // try {
+    //   const response = await fetch("/api/login", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //     },
+    //     body: JSON.stringify({ email }),
+    //   });
+    //   console.log("response", response)
+
+    //   const data = await response.json();
+
+    //   if (data.success) {
+    //     setContinue(true);
+    //   } else {
+    //     // Handle error
+    //   }
+    // } catch (error) {
+    //   console.error("Error:", error);
+    // }
     setContinue(true);
   };
-
-  function getEmail(email: string){
-    setEmail(email);
-  };
-
 
   return (
     <>
@@ -34,7 +65,10 @@ function LoginPage() {
               </div>
               <div className="flex flex-row justify-center mt-2">
                 Alternatively, &nbsp;
-                <div className="text-[#1e7ad1] hover: hover:text-[#89bae7] underline">
+                <div
+                  className="text-[#1e7ad1] hover: hover:text-[#89bae7] underline"
+                  onClick={handleEnterPINClick}
+                >
                   click here to enter your PIN.
                 </div>
               </div>
@@ -43,6 +77,31 @@ function LoginPage() {
               {" "}
               Let`s keep the gaming vibes strong! 🎮
             </div>
+            {showEnterPIN && (
+              <div className="w-full">
+                <div className="flex flex-col justify-center items-center mt-10 text-center gap-6">
+                  <div className="text-5xl font-bold">Enter Your PIN 🎮</div>
+                  <div className="flex">
+                    {[1, 2, 3, 4, 5, 6].map((index) => (
+                      <input
+                        key={index}
+                        type="text"
+                        maxLength={1}
+                        className="w-12 h-12 text-3xl border border-black rounded-md mx-2 outline-none text-center"
+                      />
+                    ))}
+                  </div>
+                  <button
+                    onClick={() => {
+                      router.push("/");
+                    }}
+                    className="text-2xl font-bold border border-black p-2 rounded-lg"
+                  >
+                    Submit
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       ) : (
